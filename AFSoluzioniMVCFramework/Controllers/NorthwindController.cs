@@ -1,4 +1,5 @@
-﻿using DataManager;
+﻿using AFSoluzioniMVCFramework.Extensions;
+using DataManager;
 using DTOLib;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,11 @@ namespace AFSoluzioniMVCFramework.Controllers
     public class NorthwindController : Controller
     {
         private IDBProvider db;
+       //public NorthwindController() 
         public NorthwindController(IDBProvider db) // dependency
         {
+            String s = "999111";
+            bool isNum = s.IsNumeric();
             //db = new ADODBProvider();
             //db = FactoryDBProvider.GetProvider();
 

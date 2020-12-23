@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "Employees";
+    string user = User.Identity.Name;
 }
 
 <h2>Employees</h2>
+<h2>@user</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
