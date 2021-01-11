@@ -27,6 +27,11 @@ namespace DataManager
 
             List<Employee> employees = query.ToList();
 
+            Employee emp1 = new Employee() { FirstName = "aaa", LastName = "bbb" };
+            Employee emp2 = new Employee() { FirstName = "aaa", LastName = "bbb" };
+            Employee emp3 = new Employee() { FirstName = "aaa", LastName = "bbb" };
+            Employee emp4 = new Employee() { FirstName = "aaa", LastName = "bbb" };
+
             foreach (var item in employees)
             {
                 resultList.Add(new DTO_Employee() {
@@ -46,6 +51,29 @@ namespace DataManager
                         where e.EmployeeID == EmployeeID
                         select e;
             return result;
+        }
+
+        public OperationResult NewEmployee(DTO_Employee dto_emp)
+        {
+            OperationResult res = new OperationResult() { IsOperationOK = true };
+            Employee ef_emp = new Employee()
+            {
+                FirstName = dto_emp.FirstName,
+                LastName = dto_emp.LastName,
+                HireDate = dto_emp.HireDate
+            };
+
+            ctx.Employees.Add(ef_emp);
+            try
+            {
+                ctx.SaveChanges();
+            }
+            catch (Exception excp)
+            {
+                res.IsOperationOK = false;
+                res.Message = excp.Message;
+            }
+            return res;
         }
     }
 }

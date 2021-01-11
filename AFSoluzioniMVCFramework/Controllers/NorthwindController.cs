@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -25,10 +26,12 @@ namespace AFSoluzioniMVCFramework.Controllers
 
             this.db = db; // injection
         }
-        //[Authorize]
+        [Authorize]
         // GET: Northwind
         public ActionResult Employees()
         {
+            Session["myObject"] = new DTO_Employee() {FirstName="lkj" };
+
             List<DTO_Employee> model = db.GetAllEmployees();
             return View(model);
         }
@@ -37,6 +40,36 @@ namespace AFSoluzioniMVCFramework.Controllers
         {
             DTO_Employee model = db.GetEmployeeByID(id);
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            var z = SyncMethod();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(DTO_Employee model)
+        {
+            //.....................
+
+            var x = await AsyncMethod();
+
+            //var z = SyncMethod();
+
+            OperationResult result = db.NewEmployee(model);
+            return View();
+        }
+
+        private object SyncMethod()
+        {
+            throw new NotImplementedException();
+        }
+
+        private Task<int> AsyncMethod()
+        {
+            throw new NotImplementedException();
         }
     }
 }

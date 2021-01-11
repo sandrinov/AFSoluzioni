@@ -18,5 +18,10 @@ namespace DataManager
         {
             throw new NotImplementedException();
         }
+
+        public OperationResult NewEmployee(DTO_Employee model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

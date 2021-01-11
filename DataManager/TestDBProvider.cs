@@ -22,5 +22,10 @@ namespace DataManager
         {
             return new DTO_Employee() { ID = 1, FirstName = "Mario", LastName = "Rossi", HireDate = DateTime.Now };
         }
+
+        public OperationResult NewEmployee(DTO_Employee model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

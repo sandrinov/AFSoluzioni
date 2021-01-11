@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "All Employees";
+}
+
+<div class="text-center">
+    <h1 class="display-4">All Employees</h1>
+</div>
+<hr />
+<div>
+    <a class="btn btn-primary" role="button" id="btn_employees">Link</a>
+</div>
+<br />
+<hr />
+<div>
+    <table class="table table-dark" id="tbl_employees">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Birth Date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        //Here is the custom javascript just for this view.
+        $(document).ready(function () {
+
+            $('#btn_employees').on('click', function () {
+
+                //var xhttp = new XMLHttpRequest();
+                //xhttp.onreadystatechange = function () {
+                //    if (this.readyState == 4 && this.status == 200) {
+                //        // Typical action to be performed when the document is ready:
+                //        var res = xhttp.responseText;
+                //    }
+                //};
+                //xhttp.open("GET", "/API/GetAllEmployees", true);
+                //xhttp.send();
+
+                $.ajax({
+                    url: "/API/GetAllEmployees",
+                    context: document.body
+                }).done(function (result) {
+                    var x = 0;
+                });
+
+
+
+
+            });
+        });
+
+
+    </script>
+}

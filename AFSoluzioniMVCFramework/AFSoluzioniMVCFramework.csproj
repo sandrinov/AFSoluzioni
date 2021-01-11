@@ -253,6 +253,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Northwind\Employees.cshtml" />
     <Content Include="Views\Northwind\Details.cshtml" />
+    <Content Include="Views\Northwind\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

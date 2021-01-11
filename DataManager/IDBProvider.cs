@@ -11,5 +11,6 @@ namespace DataManager
     {
         List<DTO_Employee> GetAllEmployees();
         DTO_Employee GetEmployeeByID(int EmployeeID);
+        OperationResult NewEmployee(DTO_Employee model);
     }
 }

@@ -111,5 +111,10 @@ namespace DataManager
             }
             return result;
         }
+
+        public OperationResult NewEmployee(DTO_Employee model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

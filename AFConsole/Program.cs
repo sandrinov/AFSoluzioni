@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            System.Drawing.Bitmap bmp;
+            //System.Drawing.Bitmap bmp;
 
             int x = 10;
             int y = 20;

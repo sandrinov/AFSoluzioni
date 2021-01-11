@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace DTOLib
         [DisplayName("Nome")]
         public String FirstName { get; set; }
         [DisplayName("Cognome")]
+        //[Required]
+        //[RegularExpression("jlkjlkj")]
         public String LastName { get; set; }
         [DisplayName("Data Assunzione")]
         public DateTime HireDate { get; set; }
